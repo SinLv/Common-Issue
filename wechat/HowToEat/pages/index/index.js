@@ -7,7 +7,9 @@ Page({
     motto: 'Hello World',
     userInfo: {},
     hasUserInfo: false,
-    canIUse: wx.canIUse('button.open-type.getUserInfo')
+    canIUse: wx.canIUse('button.open-type.getUserInfo'),
+    latitude: 0,
+    longitude: 0
   },
   //事件处理函数
   bindViewTap: function() {
@@ -16,6 +18,13 @@ Page({
     })
   },
   onLoad: function () {
+    // wx.getLocation({
+    //   altitude: 'altitude',
+    //   type: 'wgs84',
+    //   success: (res) => {
+    //     this.setData({latitude: res.latitude, longitude: res.longitude});
+    //   }
+    // })
     if (app.globalData.userInfo) {
       this.setData({
         userInfo: app.globalData.userInfo,
